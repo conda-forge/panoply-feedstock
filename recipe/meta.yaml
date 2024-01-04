@@ -21,14 +21,16 @@ test:
   commands:
     - test -f $PREFIX/bin/panoply            # [unix]
     - if exist %SCRIPT%\panoply.bat exit 1   # [win]
-    - pnj-ncdump
-    - pnj-nccopy
-    - pnj-nccompare
-    - pnj-bufrspliter
-    - pnj-cfpointwriter
-    - pnj-gribcdmindex
-    - pnj-featurescan
-    - pnj-catalogcrawler
+    - test -f $PREFIX/bin/panoplycl            # [unix]
+    - if exist %SCRIPT%\panoplycl.bat exit 1   # [win]
+    - ncj-panoply-ncdump
+    - ncj-panoply-nccopy
+    - ncj-panoply-nccompare
+    - ncj-panoply-bufrspliter
+    - ncj-panoply-cfpointwriter
+    - ncj-panoply-gribcdmindex
+    - ncj-panoply-featurescan
+    - ncj-panoply-catalogcrawler
 
 
 about:
