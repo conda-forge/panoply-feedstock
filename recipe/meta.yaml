@@ -14,15 +14,17 @@ build:
   noarch: generic
 
 requirements:
+  build:
+    - dos2unix
   run:
     - openjdk >=11
 
 test:
   commands:
-    - test -f $PREFIX/bin/panoply            # [unix]
-    - if exist %SCRIPT%\panoply.bat exit 1   # [win]
-    - test -f $PREFIX/bin/panoplycl            # [unix]
-    - if exist %SCRIPT%\panoplycl.bat exit 1   # [win]
+    - test -f $PREFIX/bin/panoply
+    - test -f $PREFIX/bin/panoply.bat
+    - test -f $PREFIX/bin/panoplycl
+    - test -f $PREFIX/bin/panoplycl.bat
     - ncj-panoply-ncdump
     - ncj-panoply-nccopy
     - ncj-panoply-nccompare
@@ -44,3 +46,4 @@ about:
 extra:
   recipe-maintainers:
     - cofinoa
+    - scharlton2
