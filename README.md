@@ -148,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@cofinoa](https://github.com/cofinoa/)
+* [@scharlton2](https://github.com/scharlton2/)
 
