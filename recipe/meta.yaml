@@ -1,5 +1,5 @@
 {% set name = "Panoply" %}
-{% set version = "5.5.0" %}
+{% set version = "5.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,22 +7,24 @@ package:
 
 source:
   url: https://www.giss.nasa.gov/tools/panoply/download/PanoplyJ-{{ version }}.tgz
-  sha256: 741596292365993597ede80ea16a69fa49f929820cac87c7040e923088568fe3
+  sha256: 14196be2dd83721e475dfa0b230859b9e102bfdcc62119536ececbf8dcbbbb96
 
 build:
   number: 0
   noarch: generic
 
 requirements:
+  build:
+    - dos2unix
   run:
     - openjdk >=11
 
 test:
   commands:
-    - test -f $PREFIX/bin/panoply            # [unix]
-    - if exist %SCRIPT%\panoply.bat exit 1   # [win]
-    - test -f $PREFIX/bin/panoplycl            # [unix]
-    - if exist %SCRIPT%\panoplycl.bat exit 1   # [win]
+    - test -f $PREFIX/bin/panoply
+    - test -f $PREFIX/bin/panoply.bat
+    - test -f $PREFIX/bin/panoplycl
+    - test -f $PREFIX/bin/panoplycl.bat
     - ncj-panoply-ncdump
     - ncj-panoply-nccopy
     - ncj-panoply-nccompare
@@ -44,3 +46,4 @@ about:
 extra:
   recipe-maintainers:
     - cofinoa
+    - scharlton2
