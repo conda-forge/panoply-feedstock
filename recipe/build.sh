@@ -83,3 +83,28 @@ cat <<EOF >${PREFIX}/bin/ncj-panoply-catalogcrawler
 java -Xms512m -Xmx4g \$JAVA_OPTS -cp $PREFIX/lib/java/PanoplyJ/jars/Panoply.jar thredds.client.catalog.tools.CatalogCrawler "\$@"
 EOF
 chmod +x ${PREFIX}/bin/ncj-panoply-catalogcrawler
+
+## WINDOWS .BAT scripts
+### TODO: a better method should be use
+## WINDOWS
+
+cat <<EOF >${PREFIX}/bin/panoply.bat
+@echo off
+REM Panoply Data Viewer
+REM
+REM Usage:
+REM   panoply [-log (TRACE|DEBUG|INFO|WARN|ERROR)] [-multi] [-path DATAPATH] [--] [DATAFILENAME [DATAFILENAME ...]]
+REM   panoply -script SCRIPTFILE [-log (TRACE|DEBUG|INFO|WARN|ERROR)] [-gui | -server] [-grib (strict|lenient)] [-enginelist] [-engine ENGINE] [-enginepath ENGINEPATH] [--]
+
+java -Xms512m -Xmx4g %JAVA_OPTS% -cp $PREFIX/lib/java/PanoplyJ/jars/Panoply.jar gov.nasa.giss.panoply.Panoply %*
+EOF
+
+cat <<EOF >${PREFIX}/bin/panoplycl.bat
+@echo off
+REM Panoply Data Viewer (Command Line Interpreter)
+REM
+REM Usage:
+REM   panoplycl [-script SCRIPTFILE] [-log (TRACE|DEBUG|INFO|WARN|ERROR)] [-gui | -server] [-grib (strict|lenient)] [-enginelist] [-engine ENGINE] [-enginepath ENGINEPATH] [--]
+
+java -Xms512m -Xmx4g %JAVA_OPTS% -cp $PREFIX/lib/java/PanoplyJ/jars/Panoply.jar gov.nasa.giss.panoply.PanoplyCL %*
+EOF
