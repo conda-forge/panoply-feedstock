@@ -54,11 +54,11 @@ java -Xms512m -Xmx4g \$JAVA_OPTS -cp $PREFIX/lib/java/PanoplyJ/jars/Panoply.jar 
 EOF
 chmod +x ${PREFIX}/bin/ncj-panoply-nccompare
 
-cat <<EOF >${PREFIX}/bin/ncj-panoply-bufrspliter
+cat <<EOF >${PREFIX}/bin/ncj-panoply-bufrsplitter
 #!/usr/bin/env bash
 java -Xms512m -Xmx4g \$JAVA_OPTS -cp $PREFIX/lib/java/PanoplyJ/jars/Panoply.jar ucar.nc2.iosp.bufr.writer.BufrSplitter "\$@"
 EOF
-chmod +x ${PREFIX}/bin/ncj-panoply-bufrspliter
+chmod +x ${PREFIX}/bin/ncj-panoply-bufrsplitter
 
 cat <<EOF >${PREFIX}/bin/ncj-panoply-cfpointwriter
 #!/usr/bin/env bash
