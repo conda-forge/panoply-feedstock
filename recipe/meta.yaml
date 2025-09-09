@@ -28,7 +28,7 @@ test:
     - ncj-panoply-ncdump
     - ncj-panoply-nccopy
     - ncj-panoply-nccompare
-    - ncj-panoply-bufrspliter
+    - ncj-panoply-bufrsplitter
     - ncj-panoply-cfpointwriter
     - ncj-panoply-gribcdmindex
     - ncj-panoply-featurescan
