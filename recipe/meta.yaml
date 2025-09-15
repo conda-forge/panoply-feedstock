@@ -1,5 +1,5 @@
 {% set name = "Panoply" %}
-{% set version = "5.6.2" %}
+{% set version = "5.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://www.giss.nasa.gov/tools/panoply/download/PanoplyJ-{{ version }}.tgz
-  sha256: 0f1423214bf61a46f75676a8ae984c0d3a3e1a533f368099eb2fe88074acd3b7
+  sha256: 0d61f49e080f5f0b356553cf4fa107d5e75ef6916e13e043e2470b5171f8a379
 
 build:
   number: 0
@@ -18,6 +18,7 @@ requirements:
     - dos2unix
   run:
     - openjdk >=11
+    - menuinst >=2.2
 
 test:
   commands:
@@ -28,12 +29,11 @@ test:
     - ncj-panoply-ncdump
     - ncj-panoply-nccopy
     - ncj-panoply-nccompare
-    - ncj-panoply-bufrspliter
+    - ncj-panoply-bufrsplitter
     - ncj-panoply-cfpointwriter
     - ncj-panoply-gribcdmindex
     - ncj-panoply-featurescan
     - ncj-panoply-catalogcrawler
-
 
 about:
   home: https://www.giss.nasa.gov/tools/panoply/
