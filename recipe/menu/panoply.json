@@ -1,0 +1,19 @@
+{
+  "menu_name": "Panoply",
+  "menu_items": [
+    {
+      "name": "Panoply ({{ ENV_NAME }})",
+      "description": "NASA Panoply GUI",
+      "command": ["panoply"],
+      "activate": true,
+      "terminal": false,
+      "icon": "{{ PREFIX }}/share/menu/icons/panoply.{{ ICON_EXT }}",
+      "platforms": {
+        "linux": {
+          "Categories": ["Education", "Science"]
+        },
+        "win": {},
+        "osx": {}      }
+    }
+  ]
+}

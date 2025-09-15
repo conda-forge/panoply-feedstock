@@ -69,3 +69,22 @@ write_launcher ncj-panoply-cfpointwriter  ucar.nc2.ft.point.writer.CFPointWriter
 write_launcher ncj-panoply-gribcdmindex   ucar.nc2.grib.collection.GribCdmIndex
 write_launcher ncj-panoply-featurescan    ucar.nc2.ft2.scan.FeatureScan
 write_launcher ncj-panoply-catalogcrawler thredds.client.catalog.tools.CatalogCrawler
+
+# --------------------------------------------------------------------------
+# Create Menu Entry
+# --------------------------------------------------------------------------
+install -Dm0644 "$RECIPE_DIR/menu/panoply.json"  "$PREFIX/share/menu/panoply.json"
+install -Dm0644 "$RECIPE_DIR/menu/panoply.png"   "$PREFIX/share/menu/icons/panoply.png"
+install -Dm0644 "$RECIPE_DIR/menu/panoply.ico"   "$PREFIX/share/menu/icons/panoply.ico"
+install -Dm0644 "$RECIPE_DIR/menu/panoply.icns"  "$PREFIX/share/menu/icons/panoply.icns"
+
+# Install the menu hook script
+install -Dm0644 "$RECIPE_DIR/menu/panoply_menu.py"  "$PREFIX/share/menu/hooks/panoply_menu.py"
+
+# --------------------------------------------------------------------------
+# Include Windows hook scripts in the payload (so they run on install)
+# --------------------------------------------------------------------------
+install -Dm0644 "$RECIPE_DIR/post-link.bat"  "$PREFIX/Scripts/.${PKG_NAME}-post-link.bat"
+install -Dm0644 "$RECIPE_DIR/pre-unlink.bat" "$PREFIX/Scripts/.${PKG_NAME}-pre-unlink.bat"
+unix2dos "$PREFIX/Scripts/.${PKG_NAME}-post-link.bat"
+unix2dos "$PREFIX/Scripts/.${PKG_NAME}-pre-unlink.bat"

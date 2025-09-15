@@ -18,6 +18,7 @@ requirements:
     - dos2unix
   run:
     - openjdk >=11
+    - menuinst >=2.2
 
 test:
   commands:
