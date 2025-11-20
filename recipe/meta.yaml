@@ -1,5 +1,5 @@
 {% set name = "Panoply" %}
-{% set version = "5.8.0" %}
+{% set version = "5.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://www.giss.nasa.gov/tools/panoply/download/PanoplyJ-{{ version }}.tgz
-  sha256: e50a5fb92e665fcc489965fc17ffb9af78e55b86e632fb546a45e346f6b5c43f
+  sha256: a5d9491abe33c078813fd06e8c02cd3c17bd9bd508c0d40b80e511a26c659e35
 
 build:
   number: 0
