@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  name: Panoply
+  version: "5.10.2"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://www.giss.nasa.gov/tools/panoply/download/PanoplyJ-${{ version }}.tgz
+  sha256: a6b3bc0d2c86ae74112501d7c1bca73ce71911064e6463c69343272c2dae1cd8
+
+build:
+  number: 1
+  noarch: generic
+
+requirements:
+  build:
+    - dos2unix
+  run:
+    - openjdk >=11
+    - menuinst >=2.2
+
+tests:
+  - script:
+      - test -f $PREFIX/bin/panoply
+      - test -f $PREFIX/bin/panoply.bat
+      - test -f $PREFIX/bin/panoplycl
+      - test -f $PREFIX/bin/panoplycl.bat
+      - ncj-panoply-ncdump
+      - ncj-panoply-nccopy
+      - ncj-panoply-nccompare
+      - ncj-panoply-bufrsplitter
+      - ncj-panoply-cfpointwriter
+      - ncj-panoply-gribcdmindex
+      - ncj-panoply-featurescan
+      - ncj-panoply-catalogcrawler
+
+about:
+  summary: Panoply plots geo-referenced and other arrays from netCDF, HDF, GRIB, and other datasets.
+  license: Unlicense
+  license_file: README.txt
+  homepage: https://www.giss.nasa.gov/tools/panoply/
+  repository: https://www.giss.nasa.gov/tools/panoply/credits.html
+  documentation: https://www.giss.nasa.gov/tools/panoply/help/
+
+extra:
+  recipe-maintainers:
+    - cofinoa
+    - scharlton2

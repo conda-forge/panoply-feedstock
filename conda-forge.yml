@@ -6,3 +6,4 @@ conda_build:
 conda_forge_output_validation: true
 workflow_settings:
   store_build_artifacts: true
+conda_build_tool: rattler-build
