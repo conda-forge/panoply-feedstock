@@ -39,13 +39,19 @@ tests:
       - ncj-panoply-catalogcrawler
 
 about:
-  summary: Panoply plots geo-referenced and other arrays from netCDF, HDF, GRIB, and other datasets.
+  summary: Panoply scientific data visualization application and bundled netCDF-Java command-line tools.
   license: Unlicense
   license_file: README.txt
   homepage: https://www.giss.nasa.gov/tools/panoply/
-  repository: https://www.giss.nasa.gov/tools/panoply/credits.html
   documentation: https://www.giss.nasa.gov/tools/panoply/help/
-
+  description: |
+    Panoply is a cross-platform application for plotting geo-referenced
+    and other arrays from netCDF, HDF, GRIB, and related scientific data
+    formats. This package also installs command-line tools from netCDF-Java,
+    using the netCDF-Java uber-JAR distributed as part of the Panoply
+    release. This keeps the command-line tools aligned with the netCDF-Java
+    version, including any Panoply-specific fixes, shipped with Panoply.
+    
 extra:
   recipe-maintainers:
     - cofinoa
