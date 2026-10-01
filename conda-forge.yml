@@ -4,5 +4,6 @@ github:
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
-azure:
+workflow_settings:
   store_build_artifacts: true
+conda_build_tool: rattler-build
