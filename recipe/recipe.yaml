@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: Panoply
-  version: "5.10.2"
+  version: "5.10.3"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://www.giss.nasa.gov/tools/panoply/download/PanoplyJ-${{ version }}.tgz
-  sha256: a6b3bc0d2c86ae74112501d7c1bca73ce71911064e6463c69343272c2dae1cd8
+  sha256: fdc9ae5c739af5fff60bbb4d76f116f26b4ce4ad1fe155b9032a4023e3284e1d
 
 build:
   number: 0
@@ -51,7 +51,7 @@ about:
     using the netCDF-Java uber-JAR distributed as part of the Panoply
     release. This keeps the command-line tools aligned with the netCDF-Java
     version, including any Panoply-specific fixes, shipped with Panoply.
-    
+
 extra:
   recipe-maintainers:
     - cofinoa
